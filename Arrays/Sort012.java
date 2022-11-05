@@ -43,12 +43,12 @@ public class Sort012 {
     public static void sort012(int[] arr, int size) {
         // no sorting algo is allowed
         // Have  to use three pointer approach to swap elements
-        System.out.println("ndjklgfhkdlfjghjklf");
+       
         int start = 0;
         int mid = 0;
         int end = size - 1;
         while (mid <= end) {
-            System.out.println("Start "+start+" Mid "+mid+" end" +end);
+            
             if ( arr[mid] == 0) { 
                 int temp = arr[mid];
                 arr[mid] = arr[start];
