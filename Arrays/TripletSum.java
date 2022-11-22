@@ -44,32 +44,32 @@ public class TripletSum {
         ArrayList<ArrayList<Integer>> triplets = new ArrayList<>();
         int size = arr.length;
         Arrays.sort(arr);
-        int start = 0;
-        int mid = 0;
-        int end = size - 1;
 
-        while (mid <= end) {
-            int value = arr[start] + arr[mid] + arr[end];
+        for (int i = 0; i < size; i++) {
+            int start = i + 1;
+            int end = size - 1;
+            while (start < end) {
+                int value = arr[i] + arr[start] + arr[end];
+                if (value == sum) {
 
-            if (value == sum) {
-                ArrayList<Integer> triplet = new ArrayList<>();
-                triplet.add(arr[start]);
-                triplet.add(arr[mid]);
-                triplet.add(arr[end]);
-                triplets.add(triplet);
-                start++;
-                mid++;
-                end--;
+                    ArrayList<Integer> al = new ArrayList<>();
+                    al.add(arr[i]);
+                    al.add(arr[start]);
+                    al.add(arr[end]);
 
-            } else if (value < sum) {
-                mid++;
-            } else {
-                end--;
+                    triplets.add(al);
+                    start++;
+                    end--;
+                } else if (value < sum) {
+                    start++;
+                } else {
+                    end--;
+                }
             }
         }
+
         return triplets;
 
     }
-    
 
 }
